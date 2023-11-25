@@ -29,7 +29,7 @@ afc::optobj::optobj()
 afc::optobj::optobj(int argc, char* argv[])
 {
 	baseaddr = nullptr;
-	argc = 0;
+	this->argc = 0;
 	optid = 1;
 	bindopt(argc, argv);
 }
@@ -51,8 +51,8 @@ void afc::optobj::bindopt(int argc, char* argv[])
 int afc::optobj::procopt(rule* rulelist)
 {
 	if (optid >= argc) return AFC_OPT_ERROR;
-	std::regex normal("^-{1,2}\w+");
-	std::regex optional("^-{1,2}(\w|=)+");
+	std::regex normal("^-{1,2}\\w+");
+	std::regex optional("^-{1,2}(\\w|=)+");
 	std::string temp;
 	int i = 0, j = 0;
 	bool finded = false;
@@ -62,15 +62,19 @@ int afc::optobj::procopt(rule* rulelist)
 		while (rulelist[i].Name != nullptr)
 		{
 			if (temp != rulelist[i].Name)
+			{
+				i++;
 				continue;
+			}
 			optid++;
 			if (rulelist[i].ArgNum > 0)
 			{
 				optbuffer.clear();
-				while (!std::regex_match(baseaddr[optid], optional) && j < rulelist[i].ArgNum)
+				while (optid < argc && j < rulelist[i].ArgNum && !std::regex_match(baseaddr[optid], optional))
 				{
 					optbuffer.push_back(baseaddr[optid]);
 					j++;
+					optid++;
 				}
 				if (optbuffer.size() < rulelist[i].ArgNum)
 				{
@@ -88,9 +92,13 @@ int afc::optobj::procopt(rule* rulelist)
 		while (rulelist[i].Name != nullptr)
 		{
 			if (rulelist[i].ArgNum != AFC_OPT_OPT_ARG || temp != rulelist[i].Name)
+			{
+				i++;
 				continue;
+			}
 			optbuffer.clear();
-			optbuffer.push_back(keyval(baseaddr[optid]));
+			temp = keyval(baseaddr[optid]);
+			if (!temp.empty()) optbuffer.push_back(temp);
 			optid++;
 			return rulelist[i].RetId;
 		}
@@ -108,15 +116,19 @@ int afc::optobj::procopt(rule* rulelist)
 
 bool afc::optobj::getopt(char* buffer, int bufsize)
 {
+	if (optbuffer.empty()) return false;
 	if (bufsize <= optbuffer.front().size()) return false;
 	strcpy(buffer, optbuffer.front().c_str());
 	buffer[optbuffer.front().size()] = 0;
+	optbuffer.erase(optbuffer.begin());
 	return true;
 }
 
 bool afc::optobj::getopt(std::string& buffer)
 {
+	if (optbuffer.empty()) return false;
 	buffer = optbuffer.front();
+	optbuffer.erase(optbuffer.begin());
 	return true;
 }
 

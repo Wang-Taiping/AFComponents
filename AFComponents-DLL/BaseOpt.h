@@ -10,11 +10,11 @@
 extern "C" {
 #endif // __cplusplus
 
-	AFC_HOPT CreateOptionProcessor();
-	void DestroyOptionProcessor(AFC_HOPT hOpt);
-	void BindOption(AFC_HOPT hOpt, int argc, char* argv[]);
-	int ProcOption(AFC_HOPT hOpt, AFC_RULE* RuleList);
-	int GetOption(AFC_HOPT hOpt, char* buffer, int bufsize); // bool
+	AF_EXPORT AFC_HOPT AFC_CreateOptionProcessor();
+	AF_EXPORT void AFC_DestroyOptionProcessor(AFC_HOPT hOpt);
+	AF_EXPORT void AFC_BindOption(AFC_HOPT hOpt, int argc, char* argv[]);
+	AF_EXPORT int AFC_ProcOption(AFC_HOPT hOpt, AFC_RULE* RuleList);
+	AF_EXPORT int AFC_GetOption(AFC_HOPT hOpt, char* buffer, int bufsize); // bool
 
 #ifdef __cplusplus
 }
