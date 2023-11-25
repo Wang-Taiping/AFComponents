@@ -25,5 +25,11 @@
     <CopyFileToFolders Include="..\AFComponents-DLL\StringProc.h">
       <Filter>头文件</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="..\AFComponents-DLL\BaseOpt.h">
+      <Filter>头文件</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\AFComponents-DLL\OptProc.h">
+      <Filter>头文件</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>

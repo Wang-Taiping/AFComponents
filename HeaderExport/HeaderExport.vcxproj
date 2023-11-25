@@ -140,6 +140,10 @@
     <CopyFileToFolders Include="..\AFComponents-DLL\ShortCut.h" />
     <CopyFileToFolders Include="..\AFComponents-DLL\StringProc.h" />
   </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="..\AFComponents-DLL\BaseOpt.h" />
+    <CopyFileToFolders Include="..\AFComponents-DLL\OptProc.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
