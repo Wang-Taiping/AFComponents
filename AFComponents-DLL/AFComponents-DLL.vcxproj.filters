@@ -36,6 +36,12 @@
     <ClCompile Include="StringProc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="OptProc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseOpt.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDownload.h">
@@ -54,6 +60,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="StringProc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OptProc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseOpt.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

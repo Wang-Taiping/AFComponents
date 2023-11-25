@@ -139,7 +139,9 @@
   <ItemGroup>
     <ClCompile Include="BaseDownload.cpp" />
     <ClCompile Include="BaseIPC_Pipe.cpp" />
+    <ClCompile Include="BaseOpt.cpp" />
     <ClCompile Include="BasePath.cpp" />
+    <ClCompile Include="OptProc.cpp" />
     <ClCompile Include="ShortCut.cpp" />
     <ClCompile Include="StringProc.cpp" />
   </ItemGroup>
@@ -147,7 +149,9 @@
     <ClInclude Include="BaseDownload.h" />
     <ClInclude Include="BaseIPC.h" />
     <ClInclude Include="BaseLibrary.h" />
+    <ClInclude Include="BaseOpt.h" />
     <ClInclude Include="BasePath.h" />
+    <ClInclude Include="OptProc.h" />
     <ClInclude Include="ShortCut.h" />
     <ClInclude Include="StringProc.h" />
   </ItemGroup>
