@@ -51,11 +51,12 @@ void afc::optobj::bindopt(int argc, char* argv[])
 int afc::optobj::procopt(rule* rulelist)
 {
 	if (optid >= argc) return AFC_OPT_ERROR;
-	std::regex normal("^-{1,2}\\w+");
-	std::regex optional("^-{1,2}(\\w|=)+");
+	std::regex normal("^-{1,2}(\\w|-)+");
+	std::regex optional("^-{1,2}(\\w|=|-)+");
 	std::string temp;
 	int i = 0, j = 0;
 	bool finded = false;
+	optbuffer.clear();
 	if (std::regex_match(baseaddr[optid], normal))
 	{
 		temp = keyname(baseaddr[optid]);
@@ -69,7 +70,6 @@ int afc::optobj::procopt(rule* rulelist)
 			optid++;
 			if (rulelist[i].ArgNum > 0)
 			{
-				optbuffer.clear();
 				while (optid < argc && j < rulelist[i].ArgNum && !std::regex_match(baseaddr[optid], optional))
 				{
 					optbuffer.push_back(baseaddr[optid]);
@@ -84,7 +84,11 @@ int afc::optobj::procopt(rule* rulelist)
 			}
 			return rulelist[i].RetId;
 		}
-		if (!finded) return AFC_OPT_NOT_FOUND;
+		if (!finded)
+		{
+			optid++;
+			return AFC_OPT_NOT_FOUND;
+		}
 	}
 	else if (std::regex_match(baseaddr[optid], optional))
 	{
@@ -96,7 +100,6 @@ int afc::optobj::procopt(rule* rulelist)
 				i++;
 				continue;
 			}
-			optbuffer.clear();
 			temp = keyval(baseaddr[optid]);
 			if (!temp.empty()) optbuffer.push_back(temp);
 			optid++;
@@ -106,7 +109,6 @@ int afc::optobj::procopt(rule* rulelist)
 	}
 	else
 	{
-		optbuffer.clear();
 		optbuffer.push_back(baseaddr[optid]);
 		optid++;
 		return 0;

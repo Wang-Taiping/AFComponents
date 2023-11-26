@@ -10,9 +10,9 @@
 #define AFC_OPT_REQ_ARG		AFC_OPT_ARGNUM(1)
 #define AFC_OPT_OPT_ARG		AFC_OPT_ARGNUM(-1)
 
-#define AFC_OPT_ERROR		int(-1)
-#define AFC_OPT_NOT_FOUND	int(-2)
-#define AFC_OPT_NOT_ENOUGH	int(-3)
+#define AFC_OPT_ERROR		int(-1) // procopt finish.
+#define AFC_OPT_NOT_FOUND	int(-2) // unknown keyword.
+#define AFC_OPT_NOT_ENOUGH	int(-3) // argument is not enough to fill rule.
 
 #ifdef __cplusplus
 extern "C" {
