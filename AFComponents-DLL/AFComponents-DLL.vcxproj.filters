@@ -82,9 +82,6 @@
     <None Include="..\plugin\aria2c\LICENSE.OpenSSL">
       <Filter>插件\aria2c</Filter>
     </None>
-    <None Include="..\README.md">
-      <Filter>资源文件</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\plugin\aria2c\aria2c.exe">

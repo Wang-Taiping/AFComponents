@@ -163,7 +163,6 @@
     <None Include="..\plugin\aria2c\ChangeLog.Aria2c" />
     <None Include="..\plugin\aria2c\COPYING.Aria2c" />
     <None Include="..\plugin\aria2c\LICENSE.OpenSSL" />
-    <None Include="..\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
