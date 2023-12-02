@@ -144,6 +144,9 @@
     <CopyFileToFolders Include="..\AFComponents-DLL\BaseOpt.h" />
     <CopyFileToFolders Include="..\AFComponents-DLL\OptProc.h" />
   </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="..\AFComponents-DLL\PathProc.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

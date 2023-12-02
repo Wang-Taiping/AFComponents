@@ -42,6 +42,9 @@
     <ClCompile Include="BaseOpt.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PathProc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDownload.h">
@@ -59,13 +62,16 @@
     <ClInclude Include="ShortCut.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="StringProc.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="OptProc.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="BaseOpt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PathProc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StringProc.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -82,6 +88,7 @@
     <None Include="..\plugin\aria2c\LICENSE.OpenSSL">
       <Filter>插件\aria2c</Filter>
     </None>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\plugin\aria2c\aria2c.exe">

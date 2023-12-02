@@ -142,6 +142,7 @@
     <ClCompile Include="BaseOpt.cpp" />
     <ClCompile Include="BasePath.cpp" />
     <ClCompile Include="OptProc.cpp" />
+    <ClCompile Include="PathProc.cpp" />
     <ClCompile Include="ShortCut.cpp" />
     <ClCompile Include="StringProc.cpp" />
   </ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="BaseOpt.h" />
     <ClInclude Include="BasePath.h" />
     <ClInclude Include="OptProc.h" />
+    <ClInclude Include="PathProc.h" />
     <ClInclude Include="ShortCut.h" />
     <ClInclude Include="StringProc.h" />
   </ItemGroup>
@@ -163,6 +165,7 @@
     <None Include="..\plugin\aria2c\ChangeLog.Aria2c" />
     <None Include="..\plugin\aria2c\COPYING.Aria2c" />
     <None Include="..\plugin\aria2c\LICENSE.OpenSSL" />
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

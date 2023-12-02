@@ -31,5 +31,8 @@
     <CopyFileToFolders Include="..\AFComponents-DLL\OptProc.h">
       <Filter>头文件</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="..\AFComponents-DLL\PathProc.h">
+      <Filter>头文件</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>
