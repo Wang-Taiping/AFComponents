@@ -14,9 +14,9 @@
 
 namespace afc
 {
-	std::filesystem::path program_path();
-	std::filesystem::path program_dir_path();
-	std::filesystem::path temp_path();
+	AF_EXPORT std::filesystem::path program_path();
+	AF_EXPORT std::filesystem::path program_dir_path();
+	AF_EXPORT std::filesystem::path temp_path();
 }
 
 #endif // _HAS_CXX17
