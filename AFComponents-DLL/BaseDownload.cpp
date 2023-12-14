@@ -6,14 +6,14 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
-void AFC_DownloadA(const char* Url, const char* Path)
+void AFC_DownloadA(const char* Url, const char* Path, const char* Name)
 {
 	if (std::filesystem::exists(Path)) std::filesystem::remove_all(Path);
 	char local_path[512] = { 0 };
 	AFC_ProgramFolderPathA(local_path, 1024);
 	std::filesystem::path cmd_path = local_path;
 	cmd_path /= "aria2c.exe";
-	std::string command = std::string(" -s 16 -x 16 -o \"") + Path + "\" " + Url;
+	std::string command = std::string(" -s 16 -x 16 -d \"") + Path + "\" -o \"" + Name + "\" \"" + Url + "\"";
 	STARTUPINFOA si = { 0 };
 	si.wShowWindow = SW_HIDE;
 	si.dwFlags = STARTF_USESTDHANDLES;
@@ -25,14 +25,14 @@ void AFC_DownloadA(const char* Url, const char* Path)
 	CloseHandle(pi.hThread);
 }
 
-void AFC_DownloadW(const wchar_t* Url, const wchar_t* Path)
+void AFC_DownloadW(const wchar_t* Url, const wchar_t* Path, const wchar_t* Name)
 {
 	if (std::filesystem::exists(Path)) std::filesystem::remove_all(Path);
 	wchar_t local_path[512] = { 0 };
 	AFC_ProgramFolderPathW(local_path, 1024);
 	std::filesystem::path cmd_path = local_path;
 	cmd_path /= "aria2c.exe";
-	std::wstring command = std::wstring(L" -s 16 -x 16 -o \"") + Path + L"\" " + Url;
+	std::wstring command = std::wstring(L" -s 16 -x 16 -o \"") + Path + L"\" -o \"" + Name + L"\" \"" + Url + L"\"";
 	STARTUPINFOW si = { 0 };
 	si.wShowWindow = SW_HIDE;
 	si.dwFlags = STARTF_USESTDHANDLES;

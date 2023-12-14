@@ -15,7 +15,7 @@ extern "C" {
 	* @date 2023/11/21
 	* @return none
 	*/
-	AF_EXPORT void AFC_DownloadA(const char* Url, const char* Path);
+	AF_EXPORT void AFC_DownloadA(const char* Url, const char* Path, const char* Name);
 
 	/**
 	* @brief download file from internet with no progress (wide).
@@ -23,7 +23,7 @@ extern "C" {
 	* @date 2023/11/21
 	* @return none
 	*/
-	AF_EXPORT void AFC_DownloadW(const wchar_t* Url, const wchar_t* Path);
+	AF_EXPORT void AFC_DownloadW(const wchar_t* Url, const wchar_t* Path, const wchar_t* Name);
 
 #ifdef __cplusplus
 }
