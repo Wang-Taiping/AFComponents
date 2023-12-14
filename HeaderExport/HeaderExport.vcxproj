@@ -133,7 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\AFComponents-DLL\BaseDownload.h" />
+    <CopyFileToFolders Include="..\AFComponents-DLL\Download.h" />
     <CopyFileToFolders Include="..\AFComponents-DLL\BaseIPC.h" />
     <CopyFileToFolders Include="..\AFComponents-DLL\BaseLibrary.h" />
     <CopyFileToFolders Include="..\AFComponents-DLL\BasePath.h" />

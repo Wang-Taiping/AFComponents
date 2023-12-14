@@ -7,7 +7,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\AFComponents-DLL\BaseDownload.h">
+    <CopyFileToFolders Include="..\AFComponents-DLL\Download.h">
       <Filter>头文件</Filter>
     </CopyFileToFolders>
     <CopyFileToFolders Include="..\AFComponents-DLL\BaseIPC.h">

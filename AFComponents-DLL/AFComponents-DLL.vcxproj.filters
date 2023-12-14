@@ -13,15 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="插件">
-      <UniqueIdentifier>{7f90154f-f15b-43a7-9e27-4a9e4b728975}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="插件\aria2c">
-      <UniqueIdentifier>{9b94ca3c-dda7-4b7f-8460-7a9c86fee4e3}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BaseDownload.cpp">
+    <ClCompile Include="Download.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="BaseIPC_Pipe.cpp">
@@ -47,9 +41,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseDownload.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="BaseIPC.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -74,25 +65,11 @@
     <ClInclude Include="StringProc.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Download.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\plugin\aria2c\AUTHORS.Aria2c">
-      <Filter>插件\aria2c</Filter>
-    </None>
-    <None Include="..\plugin\aria2c\ChangeLog.Aria2c">
-      <Filter>插件\aria2c</Filter>
-    </None>
-    <None Include="..\plugin\aria2c\COPYING.Aria2c">
-      <Filter>插件\aria2c</Filter>
-    </None>
-    <None Include="..\plugin\aria2c\LICENSE.OpenSSL">
-      <Filter>插件\aria2c</Filter>
-    </None>
     <None Include="cpp.hint" />
-  </ItemGroup>
-  <ItemGroup>
-    <CopyFileToFolders Include="..\plugin\aria2c\aria2c.exe">
-      <Filter>插件\aria2c</Filter>
-    </CopyFileToFolders>
   </ItemGroup>
 </Project>
