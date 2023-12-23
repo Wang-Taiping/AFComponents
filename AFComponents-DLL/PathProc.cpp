@@ -1,5 +1,7 @@
 #include "PathProc.h"
 
+namespace fs = std::filesystem;
+
 std::filesystem::path afc::program_path()
 {
 	wchar_t path[4096] = { 0 };
@@ -17,4 +19,24 @@ std::filesystem::path afc::temp_path()
 	wchar_t path[4096] = { 0 };
 	if (AFC_TempPathW(path, 4096) == int(-1)) return std::filesystem::path();
 	return path;
+}
+
+bool afc::rename(std::filesystem::path Old_p, std::filesystem::path New_p)
+{
+	std::error_code ec;
+	if (!fs::exists(Old_p, ec)) return false;
+	if (fs::is_directory(Old_p))
+	{
+		if (!fs::exists(New_p)) fs::create_directory(New_p);
+		for (auto i : fs::directory_iterator(Old_p, ec))
+			::afc::rename(i.path(), New_p / i.path().filename());
+		fs::remove_all(Old_p);
+	}
+	else
+	{
+		if (fs::exists(New_p)) fs::remove_all(New_p);
+		fs::rename(Old_p, New_p, ec);
+		return !bool(ec);
+	}
+	return true;
 }

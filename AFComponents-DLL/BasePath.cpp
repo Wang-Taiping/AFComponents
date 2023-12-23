@@ -5,6 +5,11 @@
 #include <Windows.h>
 #include <filesystem>
 
+namespace afc
+{
+	AF_EXPORT bool rename(std::filesystem::path Old_p, std::filesystem::path New_p);
+}
+
 int AFC_ProgramFilePathA(char* Buffer, int BufSize)
 {
 	char str[4096] = { 0 };
@@ -71,4 +76,14 @@ int AFC_TempPathW(wchar_t* Buffer, int BufSize)
 	if (Buffer && BufSize > path.string().size())
 		wcscpy(Buffer, path.wstring().c_str());
 	return (path.string().size() + 1);
+}
+
+int AFC_RenamePathA(const char* Old_p, const char* New_p)
+{
+	return afc::rename(Old_p, New_p);
+}
+
+int AFC_RenamePathW(const wchar_t* Old_p, const wchar_t* New_p)
+{
+	return afc::rename(Old_p, New_p);
 }
