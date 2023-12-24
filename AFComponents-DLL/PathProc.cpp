@@ -25,6 +25,12 @@ bool afc::rename(std::filesystem::path Old_p, std::filesystem::path New_p)
 {
 	std::error_code ec;
 	if (!fs::exists(Old_p, ec)) return false;
+	if (!fs::exists(New_p, ec))
+	{
+		fs::create_directories(New_p.parent_path(), ec);
+		fs::rename(Old_p, New_p, ec);
+		return true;
+	}
 	if (fs::is_directory(Old_p))
 	{
 		if (!fs::exists(New_p)) fs::create_directory(New_p);
