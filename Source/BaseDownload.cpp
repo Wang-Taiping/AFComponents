@@ -1,4 +1,7 @@
-#include "Download.h"
+#pragma warning(disable: 4996)
+
+#include "BaseDownload.h"
+#include "StringProc.h"
 #include "PathProc.h"
 #include <curl/curl.h>
 
@@ -7,7 +10,7 @@
 struct download_struct
 {
 	CURL* curl;
-	afc::download_callback callback;
+	AFC_DownloadCB callback;
 	char* buffer;
 	uintmax_t bufcache;
 	FILE* filepointer;
@@ -37,15 +40,15 @@ static size_t writedata(char* buffer, size_t size, size_t nitems, download_struc
 	return bufsize;
 }
 
-bool afc::download(std::string url, std::string path, download_callback callback)
+int AFC_DownloadA(const char* Url, const char* Path, AFC_DownloadCB Callback)
 {
 	download_struct dlstruct = { 0 };
 	dlstruct.curl = curl_easy_init();
-	dlstruct.callback = callback;
+	dlstruct.callback = Callback;
 	dlstruct.buffer = new char[WRITEBUFSIZE];
-	dlstruct.filepointer = fopen(path.c_str(), "wb");
+	dlstruct.filepointer = fopen(Path, "wb");
 	if (!dlstruct.filepointer) return false;
-	curl_easy_setopt(dlstruct.curl, CURLOPT_URL, url.c_str());
+	curl_easy_setopt(dlstruct.curl, CURLOPT_URL, Url);
 	curl_easy_setopt(dlstruct.curl, CURLOPT_NOPROGRESS, 0L);
 	curl_easy_setopt(dlstruct.curl, CURLOPT_XFERINFODATA, &dlstruct);
 	curl_easy_setopt(dlstruct.curl, CURLOPT_XFERINFOFUNCTION, progress);
@@ -58,4 +61,9 @@ bool afc::download(std::string url, std::string path, download_callback callback
 	fclose(dlstruct.filepointer);
 	delete[] dlstruct.buffer;
 	return code == CURLE_OK;
+}
+
+int AFC_DownloadW(const wchar_t* Url, const wchar_t* Path, AFC_DownloadCB Callback)
+{
+	return AFC_DownloadA(afc::convert_string(Url).c_str(), afc::convert_string(Path).c_str(), Callback);
 }

@@ -15,61 +15,64 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Download.cpp">
+    <ClCompile Include="..\Source\StringProc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BaseIPC_Pipe.cpp">
+    <ClCompile Include="..\Source\BaseDownload.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BasePath.cpp">
+    <ClCompile Include="..\Source\BaseIPC_Pipe.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ShortCut.cpp">
+    <ClCompile Include="..\Source\BaseOpt.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="StringProc.cpp">
+    <ClCompile Include="..\Source\BasePath.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="OptProc.cpp">
+    <ClCompile Include="..\Source\Download.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BaseOpt.cpp">
+    <ClCompile Include="..\Source\OptProc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="PathProc.cpp">
+    <ClCompile Include="..\Source\PathProc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ShortCut.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseIPC.h">
+    <ClInclude Include="..\Source\BaseLibrary.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="BasePath.h">
+    <ClInclude Include="..\Source\BaseOpt.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="BaseLibrary.h">
+    <ClInclude Include="..\Source\BasePath.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ShortCut.h">
+    <ClInclude Include="..\Source\Download.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="OptProc.h">
+    <ClInclude Include="..\Source\OptProc.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="BaseOpt.h">
+    <ClInclude Include="..\Source\PathProc.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="PathProc.h">
+    <ClInclude Include="..\Source\ShortCut.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="StringProc.h">
+    <ClInclude Include="..\Source\BaseDownload.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Download.h">
+    <ClInclude Include="..\Source\BaseIPC.h">
       <Filter>头文件</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
+    <ClInclude Include="..\Source\StringProc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
