@@ -1,4 +1,4 @@
-#include "BaseOpt.h"
+#include "OptProc.h"
 
 AFC_HOPT AFC_CreateOptionProcessor()
 {
